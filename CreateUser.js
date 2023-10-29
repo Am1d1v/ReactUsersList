@@ -1,4 +1,5 @@
-
+import Card from "../UserInterface/Card";
+import './CreateUser.css';
 
 function CreateUser(){
 
@@ -8,13 +9,15 @@ function CreateUser(){
     }
 
     return(
-        <form onSubmit={createUserHandler}>
-            <label htmlFor="name">Имя</label>
-            <input id="name" type="text" />
-            <label htmlFor="age">Возраст</label>
-            <input id="age" type="number" />
-            <button type="submut">Отправить</button>
-        </form>
+        <Card className="input">
+            <form onSubmit={createUserHandler}>
+                <label htmlFor="name">Имя</label>
+                <input id="name" type="text" />
+                <label htmlFor="age">Возраст</label>
+                <input id="age" type="number" />
+                <button type="submut">Добавить Пользователя</button>
+            </form>
+        </Card>
     )
 }
 export default CreateUser;
