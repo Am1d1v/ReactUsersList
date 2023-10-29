@@ -8,8 +8,8 @@ function UserList(props){
     return(
         <Card className='users'>
             <ul>
-                {users.map((user) => {
-                    return <li>{user.name} - {user.age} лет</li>
+                {users.map((user, i) => {
+                    return <li key={i}>{user.name} - {user.age} лет</li>
                 })}
             </ul>
         </Card>

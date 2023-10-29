@@ -3,7 +3,9 @@ import Button from "../UserInterface/Button";
 import './CreateUser.css';
 import { useState } from "react";
 
-function CreateUser(){
+function CreateUser(props){
+
+    const {onCreateUser} = props;
 
     const [inputName, setInputName] = useState('');
     const [inputAge, setInputAge] = useState('');
@@ -22,6 +24,9 @@ function CreateUser(){
         }
 
         console.log(inputName, inputAge)
+
+        // Add New User in array
+        onCreateUser(inputName, inputAge);
 
         // Clear Input Fields
         setInputName('')
