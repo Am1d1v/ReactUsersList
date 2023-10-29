@@ -1,0 +1,35 @@
+
+  .modal {
+    position: fixed;
+    top: 30vh;
+    left: 20%;
+    width: 50%;
+    z-index: 100;
+    overflow: hidden;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #00358b;
+    padding: 2rem;
+  }
+  
+  .header h2 {
+    margin: auto;
+    color: white;
+  }
+  
+  .content {
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .actions {
+    padding: 2rem;
+    display: flex;
+    justify-content: flex-end;
+  }

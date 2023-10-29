@@ -2,6 +2,7 @@ import Card from "../UserInterface/Card";
 import Button from "../UserInterface/Button";
 import './CreateUser.css';
 import { useState } from "react";
+import ErrorModal from "../UserInterface/ErrorModal";
 
 function CreateUser(props){
 
@@ -42,15 +43,18 @@ function CreateUser(props){
     }
 
     return(
-        <Card className="input">
-            <form onSubmit={createUserHandler}>
-                <label htmlFor="name">Имя</label>
-                <input id="name" type="text" onChange={inputNameHandler} value={inputName}/>
-                <label htmlFor="age">Возраст</label>
-                <input id="age" type="number" onChange={inputAgeHandler} value={inputAge}/>
-                <Button type={'submit'}/>
-            </form>
-        </Card>
+        <>
+            <ErrorModal title='Произошла ошибка' message='Что-то пошло не так'/>
+            <Card className="input">
+                <form onSubmit={createUserHandler}>
+                    <label htmlFor="name">Имя</label>
+                    <input id="name" type="text" onChange={inputNameHandler} value={inputName}/>
+                    <label htmlFor="age">Возраст</label>
+                    <input id="age" type="number" onChange={inputAgeHandler} value={inputAge}/>
+                    <Button type={'submit'} text='Добавить Пользователя'/>
+                </form>
+            </Card>
+        </>
     )
 }
 export default CreateUser;
