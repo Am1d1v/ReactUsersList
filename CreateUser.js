@@ -1,4 +1,6 @@
 import Card from "../UserInterface/Card";
+import Button from "../UserInterface/Button";
+
 import './CreateUser.css';
 
 function CreateUser(){
@@ -15,7 +17,7 @@ function CreateUser(){
                 <input id="name" type="text" />
                 <label htmlFor="age">Возраст</label>
                 <input id="age" type="number" />
-                <button type="submut">Добавить Пользователя</button>
+                <Button type={'submit'}/>
             </form>
         </Card>
     )
