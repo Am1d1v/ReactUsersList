@@ -11,7 +11,21 @@ function CreateUser(){
     const createUserHandler = (event) => {
         event.preventDefault();
 
+        // Check Form Validation
+        if (inputName.trim().length === 0 || inputAge.trim().length === 0) {
+            
+            return;
+        }
+
+        if (+inputAge < 1){
+            return;
+        }
+
         console.log(inputName, inputAge)
+
+        // Clear Input Fields
+        setInputName('')
+        setInputAge('')
     }
 
     const inputNameHandler = (event) => {
@@ -26,9 +40,9 @@ function CreateUser(){
         <Card className="input">
             <form onSubmit={createUserHandler}>
                 <label htmlFor="name">Имя</label>
-                <input id="name" type="text" onChange={inputNameHandler}/>
+                <input id="name" type="text" onChange={inputNameHandler} value={inputName}/>
                 <label htmlFor="age">Возраст</label>
-                <input id="age" type="number" onChange={inputAgeHandler}/>
+                <input id="age" type="number" onChange={inputAgeHandler} value={inputAge}/>
                 <Button type={'submit'}/>
             </form>
         </Card>
