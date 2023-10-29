@@ -5,10 +5,12 @@ import Button from "./Button";
 
 function ErrorModal(props){
 
-    const {title, message} = props;
+    const {title, message, onCloseModal} = props;
 
     return(
-        <Card className='modal'>
+        <div>
+            <div className='backdrop' onClick={onCloseModal}></div>
+            <Card className='modal'>
             <header className='header'>
                 <h2>
                     {title}
@@ -20,9 +22,10 @@ function ErrorModal(props){
                 </p>
             </div>
             <footer className='actions'>
-                <Button text='Закрыть'></Button>
+                <Button text='Закрыть' onCloseModal={onCloseModal}></Button>
             </footer>
         </Card>
+        </div>
     )
 }
 export default ErrorModal;
